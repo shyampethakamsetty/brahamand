@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { RefreshCw, Clock, Save, Share2, Check, Search, Loader, DatabaseIcon, AlertCircle } from 'react-feather';
+import { RefreshCw, Clock, Save, Share2, Check, Search, Loader, Database, AlertCircle } from 'react-feather';
 import Link from 'next/link';
 
 const LiveNews = () => {
@@ -176,7 +176,7 @@ const LiveNews = () => {
               <strong>Connection Issue:</strong> Unable to connect to the news service.
               <div className="mt-2">
                 <Link href="/mongodb-status" className="btn btn-sm btn-outline-primary d-inline-flex align-items-center">
-                  <DatabaseIcon size={14} className="me-1" /> Check MongoDB Status
+                  <Database size={14} className="me-1" /> Check MongoDB Status
                 </Link>
                 <span className="ms-2 text-muted small">
                   This will help diagnose the connection problem

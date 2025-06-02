@@ -62,6 +62,7 @@
     "remarkable": "^2.0.1",
     "sal.js": "^0.8.5",
     "sass": "^1.71.1",
+    "sharp": "^0.34.2",
     "slick-carousel": "^1.8.1",
     "tesseract.js": "^4.1.1",
     "typed.js": "^2.1.0",

@@ -103,7 +103,6 @@ export default function App({ Component, pageProps }) {
           dangerouslySetInnerHTML={{
             __html: `
               (function() {
-                // Immediately restore the theme preference - execute before DOM rendering
                 try {
                   const isDarkMode = localStorage.getItem('theme-mode') === 'dark';
                   if (isDarkMode) {
@@ -113,8 +112,6 @@ export default function App({ Component, pageProps }) {
                     document.documentElement.classList.remove('dark-mode');
                     document.body.classList.remove('active-dark-mode');
                   }
-                  // Prevent flash by hiding body until theme is applied
-                  document.documentElement.style.visibility = 'visible';
                 } catch (e) {}
               })();
             `,
@@ -122,7 +119,6 @@ export default function App({ Component, pageProps }) {
         />
         <style dangerouslySetInnerHTML={{
           __html: `
-            html {visibility: hidden;}
             html.dark-mode {background-color: #1a1a1a;}
           `
         }} />

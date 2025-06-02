@@ -55,12 +55,22 @@ if (!nextBin) {
 
 // On Windows, we'll use the command directly rather than through npx
 console.log(`Using Next.js binary: ${nextBin}`);
-console.log(`Running command: ${nextBin} ${nextCommand}`);
+
+// Set production host and port
+const host = '0.0.0.0';
+const port = process.env.PORT || 3000;
+
+console.log(`Running command: ${nextBin} ${nextCommand} -H ${host} -p ${port}`);
 
 // Run Next.js with the configured environment
-const nextProcess = spawn(nextBin, [nextCommand], {
+const nextProcess = spawn(nextBin, [nextCommand, '-H', host, '-p', port], {
   stdio: 'inherit',
-  env: process.env,
+  env: {
+    ...process.env,
+    NODE_ENV: 'production',
+    HOST: host,
+    PORT: port
+  },
   shell: true // Use shell on Windows
 });
 

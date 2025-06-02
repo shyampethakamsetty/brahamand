@@ -30,10 +30,10 @@ const Context = ({ children }) => {
 
     if (themeType === "dark") {
       document.body.classList.add("active-dark-mode");
-      localStorage.setItem("ब्रह्मांड AI-theme", "light");
+      setLightTheme(false);
     } else {
-      setLightTheme(false); // Set light mode
-      document.body.classList.add("active-dark-mode");
+      document.body.classList.remove("active-dark-mode");
+      setLightTheme(true);
     }
   }, []);
 
